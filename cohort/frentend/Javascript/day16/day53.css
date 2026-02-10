@@ -1,0 +1,144 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+    background-color:black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ 
+}
+/* .box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    width: 300px;
+    background:conic-gradient(from 180deg, rgba(255, 0, 0, 0.575), rgba(255, 154, 0, 0.575), rgba(208, 222, 33, 0.575), rgba(79, 201, 31, 0.575), rgba(63, 218, 216, 0.575), rgba(47, 201, 226, 0.575), rgba(28, 127, 238, 0.575), rgba(95, 21, 242, 0.575), rgba(186, 12, 248, 0.575), rgba(251, 7, 217, 0.575), rgba(255, 0, 0, 0.575));
+    /* background-color:rgba(79, 201, 31, 0.575);
+    box-shadow: 0 0 30px rgba(225, 200, 200, 0.772); /*x|y|spread radius|color
+}
+h1{
+    
+    font-size: 2rem;
+    text-shadow: 2px 2px 2px rgb(255, 0, 0);
+    
+} */
+
+
+/* @keyframes backgroundChangecolor{
+    0%{
+        background-color: red;
+        scale:1;
+        border-radius: 5%;
+    }
+    10%{
+        background-color:orange;
+        scale:0.9;
+        border-radius: 6%;
+    }
+    20%{
+        background-color: yellow;
+        scale:0.8;
+        border-radius: 7%;
+    }
+    30%{
+        background-color: green;
+        scale:0.7;
+        border-radius: 8%;
+    }
+    40%{
+        background-color: blue;
+        scale:0.6;
+        border-radius: 9%;
+    }
+    50%{
+        background-color: indigo;
+        scale:0.5;
+        border-radius: 10%;
+    }
+    60%{
+        background-color: violet;
+        scale:0.6;
+        border-radius: 9%;
+    }
+    70%{
+        background-color: pink;
+        scale:0.7;
+        border-radius: 8%;
+    }
+    80%{
+        background-color: purple;
+        scale:0.8;
+        border-radius: 7%;
+    }
+    90%{
+        background-color: magenta;
+        scale:0.9;
+        border-radius: 6%;
+    }
+    100%{
+        background-color: red;
+        scale:1;
+        border-radius: 5%;
+    }
+
+
+       
+} */
+
+/* .box{
+    height: 300px;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: backgroundChangecolor 5s infinite forwards alternate;
+}
+h1{
+    
+    font-size: 2rem;
+    text-shadow: 3px 3px 3px rgb(24, 2, 2);
+    
+} */
+
+@property --bgColor{
+    syntax: "<color>";
+    initial-value:rgb(247, 235, 9);
+    inherits: false;
+}
+@keyframes backgroundChangecolor{
+
+    from{
+        --bgColor:red;
+
+    }
+    to{
+        --bgColor:blue;
+    }
+}
+        
+
+
+
+.box{
+    height: 300px;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bgColor);
+    animation: backgroundChangecolor 5s ;
+}
+h1{
+    
+    font-size: 2rem;
+    text-shadow: 3px 3px 3px rgb(24, 2, 2);
+    
+}

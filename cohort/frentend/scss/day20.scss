@@ -1,0 +1,109 @@
+// @import "button";
+
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman';
+}
+html,
+body{
+    height: 100%;
+    width:100%;
+}
+
+// @mixin flexCenter(){
+//      display: flex;
+//     justify-content: center;
+//     align-items: center;
+
+// }
+// @mixin buttonStyle($bgcolor, $color){
+//     padding: 10px 20px;
+//     border: none;
+//     border-radius:5px;
+//     color: $color;
+//     background-color:$bgcolor;
+//     height:auto;
+//     width: auto;
+//     cursor: pointer;
+
+// }
+// main{
+//     height: 100%;
+//     width: 100%;
+//     background-color: black;
+//    @include flexCenter();
+
+//     section{
+//         background-color:rgba(245, 245, 245, 0.922);
+//         padding:10px;
+//         height:50%;
+//         width: 50%;
+//         gap: 10px;
+      
+//         @include flexCenter();
+        
+//         h1{
+//            color: black;
+//            font-size: 2rem;
+//            font-family: Helvetica;
+//         }
+//         // .blue{
+//         //     @include buttonStyle(rgb(147, 80, 176), rgb(0, 0, 0));
+//         // }
+//         // .red{
+//         //     @include buttonStyle(rgb(69, 69, 210), rgb(225, 235, 240));
+//         // }
+
+//     }
+// }
+// .blue{
+//     @include button-Style(rgb(48, 9, 64), rgb(163, 151, 151), 1rem);
+// }
+// .red{
+
+// @include button-Style(rgb(69, 69, 210), rgb(225, 235, 240), 1rem);
+// }
+
+
+
+//project 
+main{
+    height: 100%;
+    width: 100%;
+    display: flex;
+
+    section{
+        height:100%;
+        background-color: red;
+        border: 1px solid black;
+        flex-grow: 1;
+        background-size: cover;
+        background-position: center;
+        transition: all 0.7s cubic-bezier(0.075, 0.82, 0.165, 1) ;
+        transition-delay:0.09s;
+        transform: scale(1);
+        cursor:pointer;
+        }
+    section:hover{
+        flex-grow: 3;
+    }    
+    section:nth-child(1){
+        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEStSgEHlcYJK4Pyadhc9KhyQs0XBdeXDGww&s");
+
+    }    
+    section:nth-child(2){
+        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9OhIb1DUCdpx1EZPkT-X1C4YTiPTZ7W7ZpQ&s");
+    }
+    section:nth-child(3){
+        background-image:url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeM6wwfhP-WgcnCihMT-W3IBoVUQwUn41QgQ&s");
+    }
+    section:nth-child(4){
+        background-image:url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVbXDsJCxQIePpqWvfDtfYwXpLCaNsk3pzTg&s");
+    }
+    section:nth-child(5){
+        background-image:url("https://i.pinimg.com/736x/2c/bb/04/2cbb04e7ef9266e1e57a9b0e75bc555f.jpg");
+    }
+
+}

@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:  Helvetica;
+    color: whitesmoke;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+    background-color:black;
+    cursor: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+/* img{
+    height:500px;
+    
+}
+h1{
+    font-size: 40px;
+    font-weight: 800;
+} */
+ /* img{
+    height: 7%;
+    position: fixed;
+    transform: translate(-50%,-50%);
+ } */
+
+ h1{
+    font-size: 100px;
+    background-color: #333;
+    border-radius: 5px;
+    padding:10px;
+    font-family: monospace;
+ }

@@ -1,0 +1,75 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+}
+main{
+    height: 100%;
+    width: 100%;
+    background-color:black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+#card{
+    height:180px;
+    width:450px;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    padding:20px;
+    display: flex;
+    justify-content:space-evenly;
+    flex-direction: column;
+}
+#card p{
+    font-size:15px;
+    font-weight: 600;
+    
+}
+#card p span{
+    color: blue;
+    font-display: block;
+    
+}
+#outer{
+    height: 15px;
+    width:100%;
+    background-color:wheat;
+    border-radius: 5px;
+}
+#inner{
+    height: 100%;
+    width:1%;
+    background-color: rgb(92, 146, 254);
+    border-radius: 5px;
+
+}
+#bottom{
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+
+}
+#bottom h1{
+    font-size: 40px;
+    font-weight: 600;
+}
+#bottom button{
+    font-weight: 600;
+    color: whitesmoke;
+    height: 35px;
+    width: 100px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(57, 57, 248);
+    cursor: pointer;
+}
+#bottom button:active{
+    scale: 0.92;
+}

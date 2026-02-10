@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html , body{
+    height: 100%;
+    width: 100%;
+    background-color:hsl(0, 1%, 79%);
+}
+header{
+    height:100px;
+    width: 100;
+    background-color: rgb(4, 4, 57);
+    color: white;
+    text-align: center;
+    padding: 10px;
+
+}
+#first{
+    height: 150px;
+    width: 80%;
+    background-color: rgb(255, 255, 255);
+    margin: auto;
+    text-align: center;
+
+}
+h2{
+    padding: 20px;
+    text-align: center;
+
+}

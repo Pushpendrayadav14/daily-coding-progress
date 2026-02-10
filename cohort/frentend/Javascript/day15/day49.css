@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:  Helvetica;
+    color: whitesmoke;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+    padding: 30px;
+    background-color:black;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    gap: 50px;
+    flex-direction: column;
+    
+
+}
+.elm{
+    height: 400px;
+    width: 80%;
+    padding: 20px;
+    background-color:#333;
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+    border-radius:20px;
+
+
+}
+.elm h1{
+    padding: 10px;
+}
+.elm button{
+    padding:1px;
+    height: 40px;
+    width:100px;
+    background-color: royalblue;
+    color: whitesmoke;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 700;
+    transform: translate(0.8);
+    
+}

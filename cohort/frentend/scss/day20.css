@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Times New Roman";
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+main section {
+  height: 100%;
+  background-color: red;
+  border: 1px solid black;
+  flex-grow: 1;
+  background-size: cover;
+  background-position: center;
+  transition: all 0.7s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition-delay: 0.09s;
+  transform: scale(1);
+  cursor: pointer;
+}
+main section:hover {
+  flex-grow: 3;
+}
+main section:nth-child(1) {
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEStSgEHlcYJK4Pyadhc9KhyQs0XBdeXDGww&s");
+}
+main section:nth-child(2) {
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9OhIb1DUCdpx1EZPkT-X1C4YTiPTZ7W7ZpQ&s");
+}
+main section:nth-child(3) {
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeM6wwfhP-WgcnCihMT-W3IBoVUQwUn41QgQ&s");
+}
+main section:nth-child(4) {
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVbXDsJCxQIePpqWvfDtfYwXpLCaNsk3pzTg&s");
+}
+main section:nth-child(5) {
+  background-image: url("https://i.pinimg.com/736x/2c/bb/04/2cbb04e7ef9266e1e57a9b0e75bc555f.jpg");
+}/*# sourceMappingURL=day20.css.map */

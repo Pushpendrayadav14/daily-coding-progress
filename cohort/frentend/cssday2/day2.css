@@ -1,0 +1,40 @@
+*{
+margin:0;
+padding:0;
+box-sizing: border-box;
+
+}
+html,body{
+    height:100%;
+    width:100%;
+    background-color: black;
+    padding-left:10px;
+    padding-right: 10px;
+}
+h1{
+color: brown;    
+}
+#parent{
+    height:100%;
+    width:100%;
+    background-color: rgba(211, 211, 211, 0.562);
+    display: flex;
+}
+#box1{
+    height: 25%;
+    width: 25%;
+    background-color: lightblue;
+    
+}
+#box2{
+    height: 25%;
+    width: 25%;
+    background-color: rgb(5, 5, 255);
+    
+}
+#box3{
+    height: 25%;
+    width: 25%;
+    background-color:rgb(245, 69, 6);
+    
+}
