@@ -7,15 +7,21 @@ const App = () => {
   const [userRole, setuserRole] = useState("");
   const [userDes, setuserDes] = useState("");
 
-  const [allUsers, setallUsers] = useState([]);
+  const localData = JSON.parse(localStorage.getItem("all-Users")) || [];
+
+  const [allUsers, setallUsers] = useState(localData);
 
   const submiteHandler = (e) => {
     e.preventDefault();
 
     const oldUsers = [...allUsers];
+
     oldUsers.push({ userName, imageURl, userRole, userDes });
 
     setallUsers(oldUsers);
+
+    localStorage.setItem("all-Users", JSON.stringify(oldUsers));
+
     setuserName("");
     setimageURl("");
     setuserRole("");
@@ -23,9 +29,15 @@ const App = () => {
   };
   const elementDeletedHandler = (idx) => {
     const copyUser = [...allUsers];
+    const conf = confirm("Are you really want to delet this card!!!");
+    if (conf) {
+      copyUser.splice(idx, 1);
+    } else {
+      alert("Element not deleted!!!");
+    }
 
-    copyUser.splice(idx, 1);
     setallUsers(copyUser);
+    localStorage.setItem("all-Users", JSON.stringify(copyUser));
   };
 
   return (
