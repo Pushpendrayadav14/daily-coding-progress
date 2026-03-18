@@ -10,5 +10,8 @@ app.get("/about", (req, res) => {
 app.get("/home", (req, res) => {
   res.send("this is home page");
 });
+app.get("/detail", (req, res) => {
+  res.send("this is details page");
+});
 
 app.listen(3000); //server start ho gya
