@@ -14,4 +14,6 @@ app.get("/detail", (req, res) => {
   res.send("this is details page");
 });
 
-app.listen(3000); //server start ho gya
+app.listen(3000,()=>{
+  console.log()
+}); //server start ho gya
