@@ -8,7 +8,7 @@ const App = () => {
   //notes ko fetch karne ke liye function
   function fetchNotes() {
     axios
-      .get("http://localhost:3000/api/notes")
+      .get("https://day2bk-server.onrender.com/api/notes")
       .then((res) => {
         setNotes(res.data.datas);
       })
@@ -33,7 +33,7 @@ const App = () => {
     // console.log(name.value, title.value, age.value);
 
     axios
-      .post("http://localhost:3000/api/notes", {
+      .post("https://day2bk-server.onrender.com/api/notes", {
         name: name.value,
         title: title.value,
         age: age.value,
@@ -59,7 +59,7 @@ const App = () => {
   //delete function for the deletion of the data
   function handleDelete(dataId) {
     axios
-      .delete(`http://localhost:3000/api/notes/${dataId}`)
+      .delete(`https://day2bk-server.onrender.com/api/notes/${dataId}`)
       .then(() => {
         fetchNotes();
         setShowPopup(false);
@@ -97,7 +97,10 @@ const App = () => {
     e.preventDefault();
 
     axios
-      .patch(`http://localhost:3000/api/notes/${editId}`, editFormData)
+      .patch(
+        `https://day2bk-server.onrender.com/api/notes/${editId}`,
+        editFormData,
+      )
       .then((res) => {
         fetchNotes();
         console.log("UPDATED DATA:", res.data);
