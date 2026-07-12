@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  width: 100%
+}
+.box {
+  background-color: red;
+  width: 500px;
+  height: 500px;
+}
+.innerbox {
+  margin: 2rem;
+  background-color: blue;
+  width: 70%;
+  height: 70%;
+  margin: auto;
+}
+#box1 {
+  padding: 2rem;
+  background-color: green;
+  width: 12rem;
+  height: 14rem;
+  border: 2px solid black;
+}
+
+button{
+  padding:10px;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  background: blue;
+  color: azure;
+}
+
+li{
+   margin:5px 0; 
+}
