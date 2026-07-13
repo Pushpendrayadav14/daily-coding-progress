@@ -1,0 +1,41 @@
+.dd {
+  height: 400px;
+  width: 400px;
+  background-color: crimson;
+  gap: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn {
+  padding: 10px;
+  font-size: 20px;
+  font-weight: 800;
+  background-color: rgb(80, 80, 243);
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+#count {
+  font-size: 30px;
+  font-weight: 800;
+  color: white;
+}
+.btn1{
+  padding: 10px;
+  font-size: 20px;
+  font-weight: 800;
+  background-color: rgb(245, 5, 5);
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+.btn2{
+  padding: 10px;
+  font-size: 20px;
+  font-weight: 800;
+  background-color: rgb(35, 167, 3);
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
