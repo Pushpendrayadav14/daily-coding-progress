@@ -1,2 +1,2 @@
-const catMe = require("cat-me");
-console.log(catMe());
+const cat = require("cat-me");
+console.log(cat());

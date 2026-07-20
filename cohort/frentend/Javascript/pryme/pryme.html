@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="PRYME - India's premium loan intelligence platform. Transparent, fast, and built for professionals & business owners.">
+  <title>PRYME | Loan Intelligence Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #2563EB;
+      --primary-dark: #1D4ED8;
+      --primary-light: #EFF6FF;
+      --primary-glow: rgba(37, 99, 235, 0.25);
+      --accent: #F59E0B;
+      --accent-dark: #D97706;
+      --text-main: #0F172A;
+      --text-secondary: #475569;
+      --text-muted: #64748B;
+      --bg-main: #FFFFFF;
+      --bg-soft: #F8FAFC;
+      --border: #E2E8F0;
+      --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.06);
+      --shadow-md: 0 8px 24px rgba(15, 23, 42, 0.08);
+      --shadow-lg: 0 12px 32px rgba(37, 99, 235, 0.15);
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --radius-full: 9999px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      color: var(--text-main);
+      background: var(--bg-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* HEADER */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo { font-weight: 700; font-size: 1.5rem; color: var(--primary); letter-spacing: -0.5px; }
+    .nav-btn {
+      background: var(--primary);
+      color: white;
+      padding: 10px 20px;
+      border-radius: var(--radius-full);
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+      font-size: 0.95rem;
+    }
+    .nav-btn:hover { background: var(--primary-dark); transform: translateY(-1px); box-shadow: var(--shadow-sm); }
+
+    /* HERO */
+    #hero {
+      padding: 80px 24px 60px;
+      background: linear-gradient(135deg, var(--bg-main) 0%, var(--primary-light) 100%);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    #hero::before {
+      content: '';
+      position: absolute;
+      top: -40%; left: -20%; width: 80%; height: 150%;
+      background: radial-gradient(circle, rgba(37,99,235,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-content { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
+    .hero-title { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 700; line-height: 1.15; margin-bottom: 16px; letter-spacing: -0.5px; }
+    .hero-subtitle { font-size: 1.15rem; color: var(--text-secondary); margin-bottom: 32px; max-width: 600px; margin-left: auto; margin-right: auto; }
+    .hero-ctas { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 24px; }
+    .btn-primary { background: var(--primary); color: white; padding: 14px 28px; border-radius: var(--radius-full); font-weight: 600; text-decoration: none; transition: all 0.2s; box-shadow: 0 4px 12px var(--primary-glow); }
+    .btn-secondary { background: white; color: var(--text-main); padding: 14px 28px; border-radius: var(--radius-full); font-weight: 600; text-decoration: none; border: 1px solid var(--border); transition: all 0.2s; }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 16px var(--primary-glow); }
+    .btn-secondary:hover { border-color: var(--primary); color: var(--primary); }
+    .trust-line { color: var(--text-muted); font-size: 0.9rem; display: flex; align-items: center; justify-content: center; gap: 8px; }
+
+    /* LOAN HUB */
+    #loan-hub { padding: 60px 24px; max-width: 1100px; margin: 0 auto; }
+    .hub-title { text-align: center; font-size: clamp(1.5rem, 4vw, 1.8rem); font-weight: 700; margin-bottom: 40px; }
+    .hub-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      align-items: center;
+      position: relative;
+    }
+    .hub-center {
+      background: linear-gradient(135deg, var(--primary), #3B82F6);
+      color: white;
+      padding: 32px;
+      border-radius: var(--radius-lg);
+      text-align: center;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      z-index: 2;
+      max-width: 320px;
+      margin: 0 auto;
+    }
+    .hub-center h3 { font-size: 1.4rem; margin-bottom: 8px; }
+    .hub-center p { font-size: 0.9rem; opacity: 0.9; }
+    .hub-side { display: flex; flex-direction: column; gap: 16px; width: 100%; }
+    .hub-side.left, .hub-side.right { align-items: center; }
+    .loan-card {
+      background: white;
+      padding: 18px 20px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+      width: 100%;
+      max-width: 300px;
+      position: relative;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .loan-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+    .loan-card.highlighted { border-color: var(--primary); box-shadow: 0 0 0 3px var(--primary-glow), var(--shadow-md); transform: scale(1.02); }
+    .loan-icon { width: 36px; height: 36px; background: var(--primary-light); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--primary); }
+    .loan-card h4 { font-size: 1.05rem; margin-bottom: 2px; }
+    .loan-card p { font-size: 0.8rem; color: var(--text-muted); margin: 0; }
+    
+    /* Connectors (Desktop) */
+    @media (min-width: 896px) {
+      .hub-grid { grid-template-columns: 1fr 1.4fr 1fr; gap: 32px; }
+      .hub-side.left { align-items: flex-end; }
+      .hub-side.right { align-items: flex-start; }
+      .hub-grid::before, .hub-grid::after {
+        content: ''; position: absolute; height: 2px; top: 50%; width: 140px;
+        background: linear-gradient(90deg, transparent, var(--border), transparent);
+      }
+      .hub-grid::before { left: 28%; transform: translateX(-50%); }
+      .hub-grid::after { right: 28%; transform: translateX(50%); }
+    }
+
+    /* OFFER */
+    #offer { padding: 0 24px; margin: 20px auto 60px; max-width: 1000px; }
+    .offer-card {
+      background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%);
+      color: white;
+      padding: 24px;
+      border-radius: var(--radius-lg);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      box-shadow: 0 10px 25px rgba(15,23,42,0.25);
+      position: relative;
+      overflow: hidden;
+    }
+    .offer-card::before {
+      content: ''; position: absolute; top: -20px; right: -20px; width: 100px; height: 100px;
+      background: var(--accent); opacity: 0.15; filter: blur(40px); border-radius: 50%;
+    }
+    .offer-badge { background: var(--accent); color: #000; padding: 6px 14px; border-radius: var(--radius-full); font-weight: 700; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px; }
+    .offer-content { flex: 1; min-width: 260px; }
+    .offer-title { font-size: 1.3rem; font-weight: 700; margin-bottom: 6px; }
+    .offer-sub { font-size: 0.9rem; opacity: 0.85; }
+    .offer-cta { background: white; color: var(--text-main); padding: 10px 20px; border-radius: var(--radius-full); font-weight: 600; text-decoration: none; transition: 0.2s; }
+    .offer-cta:hover { background: #F1F5F9; transform: translateY(-1px); }
+
+    /* LEAD FORM */
+    #lead-form { padding: 60px 24px; background: var(--bg-soft); }
+    .form-container {
+      max-width: 680px; margin: 0 auto; background: white; padding: 32px;
+      border-radius: var(--radius-lg); box-shadow: var(--shadow-md); border: 1px solid var(--border);
+    }
+    .form-title { text-align: center; font-size: 1.5rem; font-weight: 700; margin-bottom: 6px; }
+    .form-sub { text-align: center; color: var(--text-secondary); margin-bottom: 24px; font-size: 0.95rem; }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-group { display: flex; flex-direction: column; text-align: left; }
+    .form-group.full { grid-column: 1 / -1; }
+    label { font-size: 0.85rem; font-weight: 500; margin-bottom: 6px; color: var(--text-secondary); }
+    input, select {
+      padding: 12px 14px; border: 1px solid var(--border); border-radius: var(--radius-sm);
+      font-size: 0.95rem; transition: all 0.2s; background: var(--bg-main); width: 100%;
+    }
+    input:focus, select:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px var(--primary-glow); }
+    .submit-btn {
+      grid-column: 1 / -1; background: var(--primary); color: white; padding: 14px;
+      border: none; border-radius: var(--radius-sm); font-size: 1rem; font-weight: 600;
+      cursor: pointer; transition: all 0.2s; margin-top: 8px;
+    }
+    .submit-btn:hover { background: var(--primary-dark); }
+    .privacy-note { grid-column: 1 / -1; text-align: center; font-size: 0.8rem; color: var(--text-muted); margin-top: 12px; display: flex; align-items: center; justify-content: center; gap: 6px; }
+    .success-msg { display: none; text-align: center; padding: 20px; background: #ECFDF5; color: #065F46; border-radius: var(--radius-md); margin-top: 16px; }
+    @media (max-width: 600px) { .form-grid { grid-template-columns: 1fr; } }
+
+    /* TRUST */
+    #trust { padding: 60px 24px; max-width: 1100px; margin: 0 auto; }
+    .trust-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+    .trust-card {
+      background: white; padding: 24px; border-radius: var(--radius-md);
+      border: 1px solid var(--border); text-align: center; transition: 0.2s;
+    }
+    .trust-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-sm); border-color: var(--primary); }
+    .trust-icon {
+      width: 48px; height: 48px; background: var(--primary-light); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center; margin: 0 auto 14px; color: var(--primary);
+    }
+    .trust-card h4 { font-size: 1.05rem; margin-bottom: 8px; }
+    .trust-card p { font-size: 0.9rem; color: var(--text-secondary); }
+
+    /* FOOTER */
+    footer { background: #0F172A; color: white; padding: 48px 24px; text-align: center; }
+    .footer-brand { font-size: 1.1rem; opacity: 0.9; margin-bottom: 24px; max-width: 600px; margin-left: auto; margin-right: auto; }
+    .footer-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 24px; }
+    .footer-btn {
+      background: rgba(255,255,255,0.1); color: white; padding: 10px 20px; border-radius: var(--radius-full);
+      text-decoration: none; font-weight: 500; display: flex; align-items: center; gap: 8px; transition: 0.2s; border: 1px solid rgba(255,255,255,0.2);
+    }
+    .footer-btn:hover { background: rgba(255,255,255,0.18); transform: translateY(-1px); }
+    .footer-btn.whatsapp { background: #25D366; border-color: #25D366; }
+    .footer-btn.call { background: var(--primary); border-color: var(--primary); }
+    .copyright { font-size: 0.8rem; color: rgba(255,255,255,0.5); border-top: 1px solid rgba(255,255,255,0.1); padding-top: 24px; margin-top: 24px; }
+
+    /* UTILS */
+    @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+    .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">PRYME</div>
+    <a href="#lead-form" class="nav-btn">Apply Now</a>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="hero">
+      <div class="hero-content">
+        <h1 class="hero-title">Finance, Simplified.<br>Transparent. Designed for You.</h1>
+        <p class="hero-subtitle">Discover the right loan options with clarity, confidence, and zero confusion.</p>
+        <div class="hero-ctas">
+          <a href="#lead-form" class="btn-primary">Apply Now</a>
+          <a href="tel:+919876543210" class="btn-secondary">Call Now</a>
+        </div>
+        <div class="trust-line">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          Built for India’s salaried professionals and business owners
+        </div>
+      </div>
+    </section>
+
+    <!-- LOAN HUB -->
+    <section id="loan-hub" class="fade-in">
+      <h2 class="hub-title">Your Loan Intelligence Hub</h2>
+      <div class="hub-grid">
+        <div class="hub-side left">
+          <div class="loan-card">
+            <div class="loan-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V7l8-4 8 4v14M8 21v-6a2 2 0 012-2h4a2 2 0 012 2v6"/></svg></div>
+            <div><h4>Mortgage Loan</h4><p>Low interest, long tenure</p></div>
+          </div>
+          <div class="loan-card highlighted">
+            <div class="loan-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg></div>
+            <div><h4>Business Loan</h4><p>Quick approval, flexible EMI</p></div>
+          </div>
+          <div class="loan-card highlighted">
+            <div class="loan-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+            <div><h4>Personal Loan</h4><p>Zero collateral, instant disbursement</p></div>
+          </div>
+        </div>
+
+        <div class="hub-center">
+          <h3>PRYME Loans</h3>
+          <p>Smart matching powered by financial intelligence</p>
+        </div>
+
+        <div class="hub-side right">
+          <div class="loan-card">
+            <div class="loan-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M3 10h18M5 21v-7l7-7 7 7v7"/></svg></div>
+            <div><h4>Home Loan</h4><p>Customized for buyers & builders</p></div>
+          </div>
+          <div class="loan-card">
+            <div class="loan-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 4 3 6 3s6-1 6-3v-5"/></svg></div>
+            <div><h4>Education Loan</h4><p>Fund dreams, not debt stress</p></div>
+          </div>
+          <div class="loan-card">
+            <div class="loan-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 5v2M4 17h16M5 17a2 2 0 100-4 2 2 0 000 4zM19 17a2 2 0 100-4 2 2 0 000 4z"/><path d="M7 13l2-7h6l2 7"/></svg></div>
+            <div><h4>Vehicle Loan</h4><p>Drive away with confidence</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OFFER -->
+    <section id="offer" class="fade-in">
+      <div class="offer-card">
+        <div class="offer-badge">Limited Offer</div>
+        <div class="offer-content">
+          <h3 class="offer-title">Exclusive Pre-Launch: 100% Processing Fee Waiver</h3>
+          <p class="offer-sub">Limited time benefit for early applicants. Don't miss out.</p>
+        </div>
+        <a href="#lead-form" class="offer-cta">Claim Offer →</a>
+      </div>
+    </section>
+
+    <!-- LEAD FORM -->
+    <section id="lead-form" class="fade-in">
+      <div class="form-container">
+        <h2 class="form-title">Get Your Loan Match</h2>
+        <p class="form-sub">Fill in your details. Our experts will connect within 2 hours.</p>
+        <form id="leadForm" class="form-grid">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" placeholder="Rahul Sharma" required>
+          </div>
+          <div class="form-group">
+            <label for="mobile">Mobile Number</label>
+            <input type="tel" id="mobile" placeholder="+91 98765 43210" pattern="[0-9+\s]{10,}" required>
+          </div>
+          <div class="form-group full">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="rahul@example.com" required>
+          </div>
+          <div class="form-group">
+            <label for="city">City</label>
+            <input type="text" id="city" placeholder="e.g., Mumbai, Bangalore" required>
+          </div>
+          <div class="form-group">
+            <label for="employment">Employment Type</label>
+            <select id="employment" required>
+              <option value="" disabled selected>Select type</option>
+              <option value="salaried">Salaried Professional</option>
+              <option value="business">Business Owner / Self-Employed</option>
+              <option value="freelance">Freelancer / Consultant</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="loanType">Loan Type</label>
+            <select id="loanType" required>
+              <option value="" disabled selected>Select loan</option>
+              <option value="personal">Personal Loan</option>
+              <option value="business">Business Loan</option>
+              <option value="home">Home Loan</option>
+              <option value="vehicle">Vehicle Loan</option>
+              <option value="education">Education Loan</option>
+              <option value="mortgage">Mortgage Loan</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="amount">Loan Amount (₹)</label>
+            <input type="number" id="amount" placeholder="e.g., 500000" min="50000" required>
+          </div>
+          <div class="form-group">
+            <label for="income">Monthly Income (₹)</label>
+            <input type="number" id="income" placeholder="e.g., 75000" min="0" required>
+          </div>
+          <button type="submit" class="submit-btn">Submit Application</button>
+          <div class="privacy-note">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+            Your data is secure. No spam. 100% privacy-first approach.
+          </div>
+          <div class="success-msg" id="successMsg">
+            ✅ Thank you! Your application is received. A PRYME advisor will call you shortly.
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- TRUST -->
+    <section id="trust" class="fade-in">
+      <h2 class="hub-title" style="margin-bottom:30px">Why Professionals Trust PRYME</h2>
+      <div class="trust-grid">
+        <div class="trust-card">
+          <div class="trust-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <h4>Transparent Matching</h4>
+          <p>No hidden fees. Clear terms from day one.</p>
+        </div>
+        <div class="trust-card">
+          <div class="trust-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+          <h4>Fast Processing</h4>
+          <p>Quick approvals & seamless digital workflow.</p>
+        </div>
+        <div class="trust-card">
+          <div class="trust-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>
+          <h4>No Spam Communication</h4>
+          <p>We respect your inbox and your time.</p>
+        </div>
+        <div class="trust-card">
+          <div class="trust-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div>
+          <h4>Secure & Private</h4>
+          <p>Bank-grade encryption. Data stays yours.</p>
+        </div>
+        <div class="trust-card">
+          <div class="trust-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg></div>
+          <h4>Intelligent Guidance</h4>
+          <p>AI-assisted eligibility & rate comparison.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p class="footer-brand">"Helping people grow financially with trust and intelligence"</p>
+    <div class="footer-actions">
+      <a href="https://wa.me/919876543210" target="_blank" class="footer-btn whatsapp">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.008-.57-.008-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp Us
+      </a>
+      <a href="tel:+919876543210" class="footer-btn call">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+        Call Now
+      </a>
+    </div>
+    <div class="copyright">© 2026 PRYME Financial Intelligence Pvt. Ltd. All rights reserved. | RBI Compliant | Privacy Policy | Terms</div>
+  </footer>
+
+  <script>
+    // Scroll Animation Observer
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Form Handling
+    document.getElementById('leadForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const btn = this.querySelector('.submit-btn');
+      const originalText = btn.textContent;
+      
+      btn.textContent = 'Processing...';
+      btn.disabled = true;
+      btn.style.opacity = '0.7';
+
+      // Simulate API call
+      setTimeout(() => {
+        this.reset();
+        btn.textContent = 'Application Submitted ✓';
+        document.getElementById('successMsg').style.display = 'block';
+        
+        setTimeout(() => {
+          btn.textContent = originalText;
+          btn.disabled = false;
+          btn.style.opacity = '1';
+        }, 3000);
+      }, 1500);
+    });
+  </script>
+</body>
+</html>
