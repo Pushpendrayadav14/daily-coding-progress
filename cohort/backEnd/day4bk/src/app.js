@@ -1,53 +1,42 @@
-// server create kerna
-// server ko config kerna
 const express = require("express");
-const app = express(); //server create ho jata hai
 
-app.use(express.json()); //json data ko parse karne ke liye middleware use karna
+const app = express();
+
+app.use(express.json());
 
 const notes = [];
 
 app.get("/", (req, res) => {
   res.status(200).json({
-    message: "hello world",
+    message: "Hello Welcome to my backend cource ......",
   });
 });
 
-/* 
-POST /notes(api )
-*/
 app.post("/notes", (req, res) => {
-  console.log(req.body);
   notes.push(req.body);
-
-  // console.log(notes);
-
   res.status(201).json({
-    message: "note created successfully",
-  });
-});
-
-/*delete notes*/
-//use params to get the index of the note to be deleted
-
-app.delete("/notes/:index", (req, res) => {
-  delete notes[req.params.index]; //delete the note at the specified index
-  res.status(204).json({
-    message: "note deleted successfully",
-  });
-});
-/*PATCH /notes/:index*/
-app.patch("/notes/:index", (req, res) => {
-  notes[req.params.index].description = req.body.description; //update the description of the note at the specified index
-  res.status(200).json({
-    message: "note updated successfully",
+    message: "data is success fuly submites or added on the notes..",
   });
 });
 
 app.get("/notes", (req, res) => {
-  res.status(200).json({
-    notes: notes,
+  res.status(200).json(notes);
+});
+
+app.delete("/notes/:index", (req, res) => {
+  delete notes[req.params.index];
+
+  res.status(204).json({
+    message: `note is deleted succesfully from index${req.params.index} `,
   });
 });
 
-module.exports = app; //server export karna taki use kar sakein
+app.patch("/notes/:index", (req, res) => {
+  notes[req.params.index].description = req.body.description;
+
+  res.status(200).json({
+    message: `using patch method data of notes of index: ${req.params.index} is updated...`,
+  });
+});
+
+module.exports = app;
