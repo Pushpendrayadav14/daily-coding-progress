@@ -1,0 +1,35 @@
+******************Basic fetchers*************** 
+
+***Basic fetchers Authentication fetchers****
+==>Authentication
+->register
+->login
+->logout(token blocklisting)
+->otp based registration
+
+***Basic post fetchers****
+==>post 
+->create
+->see the feed
+->like post
+->save post
+
+
+
+***Basic user fetchers****
+==>user
+->following
+->follower
+
+user{
+    username:string ,
+    email:String,
+    password:string,
+    bio:String ,
+    pfofile_img:image
+}
+
+
+
+
+
