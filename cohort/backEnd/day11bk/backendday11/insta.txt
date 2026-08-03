@@ -10,6 +10,14 @@
 ***Basic post fetchers****
 ==>post 
 ->create
+
+{
+    caption:string,
+    img_url:string,
+    user:userId,
+    createdAt:date_time
+}
+
 ->see the feed
 ->like post
 ->save post

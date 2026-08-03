@@ -1,10 +1,9 @@
 const userModel = require("../models/user.model");
-const crypto = require("crypto");
+const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
-
-//post //api/auth.register
- async function registerController(req, res){
+//register controller
+async function registerController(req, res) {
   const { username, email, password, bio, profileImg } = req.body;
   const isAlreadyExist = await userModel.findOne({
     $or: [{ username }, { email }],
@@ -19,7 +18,8 @@ const jwt = require("jsonwebtoken");
     });
   }
   //before storing paaword on the data base passwored is hashed
-  const hash = crypto.createHash("sha256").update(password).digest("hex");
+  const hash = await bcrypt.hash(password, 10);
+
   //storing the data on databse geting from user side
   const user = await userModel.create({
     username,
@@ -52,8 +52,8 @@ const jwt = require("jsonwebtoken");
   });
 }
 
-//post /api/auth/login
-async function loginController(req, res){
+//login controller...
+async function loginController(req, res) {
   const { email, username, password } = req.body;
 
   //username and password
@@ -67,8 +67,9 @@ async function loginController(req, res){
     });
   }
 
-  const hash = crypto.createHash("sha256").update(password).digest("hex");
-  const isPasswordValid = hash == user.password;
+//convert password into hash password which are takin from client side then comparing to stored password of db 
+  const isPasswordValid = await bcrypt.compare(password, user.password);
+
   if (!isPasswordValid) {
     return res.status(401).json({
       message: "evalid password..",
@@ -100,5 +101,6 @@ async function loginController(req, res){
 }
 
 module.exports = {
-    registerController,loginController
-}
+  registerController,
+  loginController,
+};
