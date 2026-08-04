@@ -5,6 +5,7 @@ const jwt = require("jsonwebtoken");
 //register controller
 async function registerController(req, res) {
   const { username, email, password, bio, profileImg } = req.body;
+
   const isAlreadyExist = await userModel.findOne({
     $or: [{ username }, { email }],
   });
@@ -34,7 +35,7 @@ async function registerController(req, res) {
       id: user._id,
     },
     process.env.JWT_SECRET,
-    { expiresIn: "1d" },
+    { expiresIn: "2d" },
   );
 
   //send token to the client side and store in the cookie storage
@@ -52,6 +53,8 @@ async function registerController(req, res) {
   });
 }
 
+// console.log("Register Controller Hit");
+
 //login controller...
 async function loginController(req, res) {
   const { email, username, password } = req.body;
@@ -61,18 +64,19 @@ async function loginController(req, res) {
   const user = await userModel.findOne({
     $or: [{ username: username }, { email: email }],
   });
+
   if (!user) {
     return res.status(404).json({
       message: "invalid username or email..",
     });
   }
 
-//convert password into hash password which are takin from client side then comparing to stored password of db 
+  //convert password into hash password which are takin from client side then comparing to stored password of db
   const isPasswordValid = await bcrypt.compare(password, user.password);
 
   if (!isPasswordValid) {
     return res.status(401).json({
-      message: "evalid password..",
+      message: "invalid password..",
     });
   }
 
@@ -82,7 +86,7 @@ async function loginController(req, res) {
       id: user._id,
     },
     process.env.JWT_SECRET,
-    { expiresIn: "1d" },
+    { expiresIn: "2d" },
   );
 
   //store toekn in cookie storage
