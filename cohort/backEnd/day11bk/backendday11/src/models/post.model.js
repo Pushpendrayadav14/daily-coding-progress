@@ -7,12 +7,12 @@ const postSchema = new mongoose.Schema({
   },
   imgURL: {
     type: String,
-    require: [true, "iamge url is require."],
+    required: [true, "iamge url is require."],
   },
   user: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "users",
-    require: [true, "user id is required for post creation.."],
+    required: [true, "user id is required for post creation.."],
   },
 });
 

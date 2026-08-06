@@ -33,4 +33,14 @@ postRouter.get(
   postController.getPostDetailsController,
 );
 
+/**
+ * @route podt /api/post/like/:userId
+ * @description return an detail about specific post with the id. also check whether the pbelongs to the user that the request come from
+ */
+postRouter.post(
+  "/like/:postId",
+  identifyUser,
+  postController.likePostController,
+);
+
 module.exports = postRouter;
