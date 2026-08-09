@@ -1,3 +1,70 @@
 main{
+    min-height:100vh;
+    width:100%;
+
+    display: flex;
+    justify-content: center;;
+    align-items: center;
     
+}
+.form-container{
+    height: fit-content;
+    min-width:400px;
+    background-color: rgb(189, 207, 249);
+    padding: 1rem;
+    border-radius: 1rem;
+    gap: 1rem;
+    h1{
+        color: black;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 1.8rem;
+        font-weight: 700;
+        padding-bottom:1rem ;
+    }
+    form{
+        display: flex;
+        flex-direction: column;
+        gap:1rem;
+
+        input{
+            border: none;
+            outline: none;
+            padding-inline:1.5rem;
+            padding-block: 1rem;
+            border-radius: 1rem;
+        }
+        .btnbox{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+
+        }
+
+        button{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-inline:1.5rem;
+            padding-block: 1rem;
+            height: 2rem;
+            width: 8rem;
+            background-color: rgb(89, 89, 249);
+            color: white;
+            text-align: center;
+            font-size:medium;
+            font-weight: 500;
+            border:none ;
+            outline: none;
+            border-radius: 0.31rem;
+            transition-duration: 0.4s;
+            
+        }
+        .button:hover {
+            box-shadow:0 8px 16px 0 rgba(0,0,0,0.6);
+        }
+
+    }
+   
+
 }

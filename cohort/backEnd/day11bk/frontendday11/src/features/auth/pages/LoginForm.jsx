@@ -17,7 +17,9 @@ const LoginForm = () => {
             name="password"
             placeholder="enter your password"
           />
-          <button type="submit">Login</button>
+          <div className="btnbox">
+            <button type="submit">Login</button>
+          </div>
         </form>
       </div>
     </main>
