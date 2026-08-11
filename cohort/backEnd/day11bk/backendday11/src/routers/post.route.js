@@ -43,4 +43,12 @@ postRouter.post(
   postController.likePostController,
 );
 
+/**
+ * @router get /api/post/feed
+ * @description get all the post from DB
+ * @access Private
+ *
+ */
+postRouter.get("/feed", identifyUser, postController.getFeedController);
+
 module.exports = postRouter;

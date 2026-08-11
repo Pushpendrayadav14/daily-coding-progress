@@ -1,0 +1,344 @@
+.post-card {
+  width: 40vh;
+  max-width: 100%;
+  margin: 40px auto;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+
+  overflow: hidden;
+
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  // --------------------------------
+  // Header
+  // --------------------------------
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 14px 16px;
+  }
+
+  // --------------------------------
+  // Profile Section
+  // --------------------------------
+
+  .profile-section {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    &__image {
+      width: 42px;
+      height: 42px;
+
+      border-radius: 50%;
+
+      object-fit: cover;
+
+      border: 2px solid #f1f1f1;
+    }
+
+    &__info {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+
+      h4 {
+        margin: 0;
+
+        font-size: 14px;
+        font-weight: 600;
+
+        color: #222;
+      }
+
+      span {
+        font-size: 12px;
+        color: #777;
+      }
+    }
+  }
+
+  // --------------------------------
+  // Follow Button
+  // --------------------------------
+
+  .follow-button {
+    border: none;
+
+    padding: 7px 15px;
+
+    border-radius: 6px;
+
+    background: #0095f6;
+    color: white;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+
+    &:hover {
+      background: #0077cc;
+    }
+
+    &--following {
+      background: #f1f1f1;
+      color: #222;
+
+      border: 1px solid #ddd;
+
+      &:hover {
+        background: #e5e5e5;
+      }
+    }
+  }
+
+  // --------------------------------
+  // Post
+  // --------------------------------
+
+  .post {
+    width: 100%;
+
+    background: #f5f5f5;
+
+    &__image {
+      display: block;
+
+      width: 100%;
+      aspect-ratio: 1 / 1;
+
+      object-fit: cover;
+    }
+  }
+
+  // --------------------------------
+  // Actions
+  // --------------------------------
+// ====================================
+// Post Actions
+// ====================================
+
+.post-actions {
+  padding: 12px 16px 16px;
+
+  &__buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 8px;
+  }
+
+  &__left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  // ====================================
+  // Action Buttons
+  // ====================================
+
+  .action-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  background: transparent;
+  border: none;
+
+  color: #222;
+
+  cursor: pointer;
+
+  transition: transform 0.15s ease;
+
+  svg {
+    width: 25px;
+    height: 25px;
+
+    display: block;
+
+    fill: currentColor;
+
+    transition: transform 0.15s ease;
+  }
+
+  &:hover {
+    transform: scale(1.08);
+  }
+
+  &--liked {
+    color: #ed4956;
+
+    svg {
+      fill: currentColor;
+    }
+  }
+}
+
+  // ====================================
+  // Save Button
+  // ====================================
+
+  &__save {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    background: transparent;
+    border: none;
+
+    color: #222;
+
+    cursor: pointer;
+
+    transition: transform 0.15s ease;
+
+    &:hover {
+      transform: scale(1.08);
+    }
+
+    svg {
+      width: 24px;
+      height: 24px;
+
+      display: block;
+
+      stroke: currentColor;
+      fill: none;
+
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+  }
+
+  // ====================================
+  // Likes
+  // ====================================
+
+  &__likes {
+    margin-top: 5px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    color: #222;
+  }
+
+  // ====================================
+  // Caption
+  // ====================================
+
+  &__caption {
+    margin-top: 8px;
+
+    font-size: 14px;
+    line-height: 20px;
+
+    color: #333;
+
+    strong {
+      font-weight: 600;
+      margin-right: 4px;
+    }
+  }
+
+  // ====================================
+  // Comments
+  // ====================================
+
+  &__comments {
+    display: block;
+
+    margin-top: 7px;
+    padding: 0;
+
+    background: transparent;
+    border: none;
+
+    color: #8e8e8e;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    &:hover {
+      color: #555;
+    }
+  }
+
+  // ====================================
+  // Add Comment
+  // ====================================
+
+  &__add-comment {
+    margin-top: 12px;
+    padding-top: 10px;
+
+    border-top: 1px solid #eeeeee;
+
+    color: #999;
+
+    font-size: 14px;
+  }
+}
+
+
+// ====================================
+// Responsive
+// ====================================
+
+@media (max-width: 500px) {
+  .post-actions {
+    padding: 12px 14px 16px;
+
+    &__left {
+      gap: 14px;
+    }
+
+    .action-button,
+    &__save {
+      svg {
+        width: 23px;
+        height: 23px;
+      }
+    }
+  }
+}
+}
+
+// ====================================
+// Responsive
+// ====================================
+
+@media (max-width: 500px) {
+
+  .post-card {
+    width: 100%;
+
+    margin: 20px 0;
+
+    border-radius: 0;
+
+    border-left: none;
+    border-right: none;
+  }
+}

@@ -88,9 +88,20 @@ async function likePostController(req, res) {
   });
 }
 
+//get all the post that is present on the system
+async function getFeedController(req, res) {
+  const posts = await postModel.find().populate("user");
+
+  return res.status(200).json({
+    message: "all post fetch successfully...",
+    posts,
+  });
+}
+
 module.exports = {
   createPostController,
   getPostController,
   getPostDetailsController,
   likePostController,
+  getFeedController,
 };
