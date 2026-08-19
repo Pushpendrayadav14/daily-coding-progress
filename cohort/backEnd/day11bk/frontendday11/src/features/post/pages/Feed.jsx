@@ -2,11 +2,7 @@ import React from "react";
 import Mainpost from "../components/Mainpost";
 
 const Feed = () => {
-  return (
-    <main>
-      <Mainpost />
-    </main>
-  );
+  return <Mainpost />;
 };
 
 export default Feed;
