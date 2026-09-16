@@ -1,0 +1,26 @@
+<!--      
+    <div className="h-screen w-screen bg-slate-900 text-white ">
+
+   
+      {/* unsplase api ket calling button  */}
+      <button
+        className="bg-blue-500 px-4 py-2 rounded-md mt-4 ml-4"
+        onClick={async () => {
+          const data = await fetchUnsplashImages("nature");
+          // console.log(data);
+        }}
+      >
+        Get Data
+      </button>
+      {/* pexels api key calling button */}
+
+      <button
+        className="bg-blue-500 px-4 py-2 rounded-md mt-4 ml-4"
+        onClick={async () => {
+          const data = await fetchPexelsVideos("nature");
+          // console.log(data);
+        }}
+      >
+        Get Data
+      </button>
+       </div> -->
