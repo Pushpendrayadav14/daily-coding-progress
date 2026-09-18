@@ -3,7 +3,6 @@ import ResultCard from "../components/ResultCard";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchUnsplashImages, fetchPexelsVideos } from "../api/mediaApi";
 import {
-  setQuery,
   setLoading,
   setError,
   setResults,
@@ -31,16 +30,18 @@ const ResultGrid = () => {
               title: item.alt_description,
               thumbnail: item.urls.small,
               src: item.urls.full,
+              url: item.links.html,
             }));
           }
           if (activeTab === "videos") {
             let response = await fetchPexelsVideos(query);
             data = response.map((item) => ({
               id: item.id,
-              type: "videos",
+              type: "video",
               title: item.user.name || "video",
               thumbnail: item.image,
-              src: item.url,
+              src: item.video_files[0].link,
+              url: item.url,
             }));
           }
           dispatch(setResults(data));
@@ -50,7 +51,7 @@ const ResultGrid = () => {
       };
       getData();
     },
-    [query, activeTab],
+    [query, activeTab, dispatch],
   );
   if (error) {
     return <h1>ERROR</h1>;
@@ -60,7 +61,7 @@ const ResultGrid = () => {
   }
 
   return (
-    <div>
+    <div className="w-full flex justify-center flex-wrap gap-6 overflow-auto p-8 ">
       {results.map((item, idx) => {
         return (
           <div key={idx}>
